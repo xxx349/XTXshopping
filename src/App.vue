@@ -5,9 +5,13 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <RouterView />
+  <div class="test">test class</div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.test{
+  color: $warnColor;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
