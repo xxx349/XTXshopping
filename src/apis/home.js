@@ -19,3 +19,15 @@ export const getNewApi=()=>{
     url:'/home/new'
   })
 }
+
+
+/**
+ * @description: 获取热门推荐
+ * @param {*}
+ * @return {*}
+ */
+export const getHotApi=()=>{
+  return httpInstance({
+    url:'/home/hot'
+  })
+}

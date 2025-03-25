@@ -13,7 +13,6 @@ export const useCategoryStore = defineStore('category', () => {
   const getCategory=async()=>{
     const res = await getCategoryApi()
     categoryList.value=res.result
-    console.log(res)
   }
   onMounted(()=>{
     getCategory()
