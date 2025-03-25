@@ -3,9 +3,14 @@ import httpInstance from '@/untils/http'
 
 // 获取banner
 
-export function getBannerApi(){
+export function getBannerApi(params={}){
+  // 默认为1 商品为2
+  const {distributionSite='1'} = params
   return httpInstance({
-    url:'home/banner'
+    url:'home/banner',
+    params:{
+      distributionSite
+    }
   })
 }
 

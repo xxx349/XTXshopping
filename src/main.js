@@ -1,6 +1,5 @@
 // 引入初始化样式文件
 import '@/styles/common.css'
-import { useIntersectionObserver } from '@vueuse/core'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
