@@ -15,7 +15,6 @@ export const lazyPlugin={
           el,
           // 判读图片是否进入视口区域  isIntersecting为bool值
           ([{isIntersecting}]) =>{
-            console.log(isIntersecting)
             if(isIntersecting){
               // 进入视口区域后 判断将图片地址是否给el
               el.src=binding.value
