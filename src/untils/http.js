@@ -4,7 +4,7 @@ import axios from "axios"
 
 const httpInstance=axios.create({
   baseURL:'http://pcapi-xiaotuxian-front-devtest.itheima.net',
-  timeout:10000
+  timeout:15000
 })
 
 // 拦截器

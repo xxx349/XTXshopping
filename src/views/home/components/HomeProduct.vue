@@ -8,7 +8,6 @@ const goodList=ref([])
 const getGood=async()=>{
   const res =await getGoodsAPI()
   goodList.value = res.result
-  console.log(res)
 }
  onMounted(()=>getGood())
 </script>

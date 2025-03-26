@@ -1,4 +1,8 @@
+<!-- 实现商品列表的插件 -->
+
 <script setup>
+
+
 defineProps({
   good:{
     type:Object,
