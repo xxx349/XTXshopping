@@ -1,19 +1,29 @@
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
+import { useUserStore } from "./user";
+const userStore=useUserStore()
+const isLogin=computed(()=>userStore.userInfo.token)
 export const useCartStore=defineStore('cart',()=>{
   // 定义state
   const cartlist=ref([])
   // 定义方法
   const addCart=(goods)=>{
-    // 添加购物车,已经添加过商品加一，否则push
-    const item=cartlist.value.find((item)=>goods.skuId===item.skuId)
-    if(item){
-      item.count++
-    }else{
-      cartlist.value.push(goods)
+    if(isLogin){
+      // 登陆后的加入购物车逻辑
+
     }
+    else{
+       // 添加购物车,已经添加过商品加一，否则push
+      const item=cartlist.value.find((item)=>goods.skuId===item.skuId)
+      if(item){
+        item.count++
+      }else{
+        cartlist.value.push(goods)
+      }
 
   }
+    }
+
   // 单选功能
   const singleCheck=(skuId,selected)=>{
     const item=cartlist.value.find((item)=>item.skuId===skuId)
