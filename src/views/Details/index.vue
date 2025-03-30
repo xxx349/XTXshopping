@@ -151,7 +151,7 @@ const addCart=()=>{
                     </li>
                   </ul>
                   <!-- 图片 -->
-                  <img  v-for="p in goods.details.pictures" :src="p" alt="">
+                  <img  v-for="(p,index) in goods.details.pictures" :key="index" :src="p" alt="">
                 </div>
               </div>
             </div>
