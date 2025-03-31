@@ -12,3 +12,13 @@ import httpInstance from "@/untils/http";
     }
   })
  }
+
+//  获取用户信息页面猜你喜欢的接口
+export const getLikeListAPI = ({ limit = 4 }) => {
+  return httpInstance({
+    url:'/goods/relevant',
+    params: {
+      limit
+    }
+  })
+}
