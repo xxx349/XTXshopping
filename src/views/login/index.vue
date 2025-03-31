@@ -5,7 +5,7 @@ import { ref } from 'vue';
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
 import { useRouter } from 'vue-router';
-import { useUserStore } from '@/stores/user';
+import { useUserStore } from '@/stores/userStore';
 const userStore=useUserStore()
 // 准备表单对象
 const form =ref({
@@ -46,7 +46,7 @@ const doLogin=()=>{
 formRef.value.validate(async (valid)=>{
   const {account,password}=form.value
   // valid:所有表单通过校验才为true
-  
+
   // 若通过才登陆成功
   if(valid){
     await userStore.getUserInfo({account,password})
@@ -59,7 +59,7 @@ formRef.value.validate(async (valid)=>{
   else{
 
   }
-  
+
 })
 }
 

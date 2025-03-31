@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router';
-import { useUserStore } from '@/stores/user';
+import { useUserStore } from '@/stores/userStore';
 const userStore=useUserStore()
 const router=useRouter()
 const confirm=()=>{
@@ -19,7 +19,7 @@ const confirm=()=>{
         <!-- 多模块渲染，区分登录与否 -->
          <!-- 通过token判断是否登录，登陆时第一块被显示 -->
         <template v-if="userStore.userInfo.token">
-          
+
           <li><a href="javascript:;"><i class="iconfont icon-user"></i>{{ userStore.userInfo.account }}</a></li>
           <li>
             <el-popconfirm @confirm="confirm" title="确认退出吗?" confirm-button-text="确认" cancel-button-text="取消">
@@ -32,7 +32,7 @@ const confirm=()=>{
           <li><a href="javascript:;">会员中心</a></li>
         </template>
         <template v-else>
-          
+
           <li><a href="javascript:;" @click="$router.push('/login')">请先登录</a></li>
           <li><a href="javascript:;">帮助中心</a></li>
           <li><a href="javascript:;">关于我们</a></li>

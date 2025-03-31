@@ -20,7 +20,6 @@ let skuObj={}
 
 // sku规格被操作时
 const skuchange =(sku)=>{
-  console.log(sku);
   skuObj=sku
 }
 
@@ -28,8 +27,7 @@ const skuchange =(sku)=>{
 // count
 const count = ref(1)
 const countChange=(count)=>{
-  console.log(count)
-  
+
 }
 // 添加购物车
 const addCart=()=>{

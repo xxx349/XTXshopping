@@ -4,7 +4,7 @@ import { onMounted,ref } from 'vue';
 
 export const useCategoryStore = defineStore('category', () => {
   // 导航列表的逻辑
-  
+
   // 导航列表数据
 
   let categoryList=ref([])
@@ -17,5 +17,8 @@ export const useCategoryStore = defineStore('category', () => {
   onMounted(()=>{
     getCategory()
   })
-  return {categoryList,getCategory}
+  return {
+    categoryList,
+    getCategory
+  }
 })
